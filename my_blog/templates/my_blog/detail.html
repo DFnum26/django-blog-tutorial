@@ -9,7 +9,7 @@
 														  datetime="post.created_time">{{ post.created_time }}</time></a></span>
 				<span class="post-author"><a href="#">{{post.auther}}</a></span>
 				<span class="comments-link"><a href="#">{{ post.comment_set.count }} 评论</a></span>
-				<span class="views-count"><a href="#">999+ 阅读</a></span>
+				<span class="views-count"><a href="#">{{ post.views }} 阅读</a></span>
 			</div>
 		</header>
 		<div class="entry-content clearfix">
@@ -84,50 +84,7 @@
 			</li>
 		</ul>
 	</div>
-	<div class="widget widget-recent-posts">
-		<h3 class="widget-title">最新文章</h3>
-		<ul>
-			<li>
-				<a href="#">Django 博客开发入门教程：前言</a>
-			</li>
-			<li>
-				<a href="#">Django 博客使用 Markdown 自动生成文章目录</a>
-			</li>
-			<li>
-				<a href="#">部署 Django 博客</a>
-			</li>
-		</ul>
-	</div>
-	<div class="widget widget-archives">
-		<h3 class="widget-title">归档</h3>
-		<ul>
-			<li>
-				<a href="#">2017 年 5 月</a>
-			</li>
-			<li>
-				<a href="#">2017 年 4 月</a>
-			</li>
-			<li>
-				<a href="#">2017 年 3 月</a>
-			</li>
-		</ul>
-	</div>
-
-	<div class="widget widget-category">
-		<h3 class="widget-title">分类</h3>
-		<ul>
-			<li>
-				<a href="#">Django 博客教程 <span class="post-count">(13)</span></a>
-			</li>
-			<li>
-				<a href="#">Python 教程 <span class="post-count">(11)</span></a>
-			</li>
-			<li>
-				<a href="#">Django 用户认证 <span class="post-count">(8)</span></a>
-			</li>
-		</ul>
-	</div>
-
+	
 	<div class="widget widget-tag-cloud">
 		<h3 class="widget-title">标签云</h3>
 		<ul>

@@ -20,6 +20,7 @@ def categories(request, category_id):
 
 def detail(request, post_id):
     post = Post.objects.get(id=post_id)
+    post.increase_views()
     post.body = markdown.markdown(post.body,
                                   extensions=[
                                      'markdown.extensions.extra',

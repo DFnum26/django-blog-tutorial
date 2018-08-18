@@ -17,7 +17,6 @@ class Category(models.Model):
 
     def __str__(self):
         return self.text
-    
 
 class Post(models.Model):
     '''文章'''
@@ -36,12 +35,18 @@ class Post(models.Model):
     tag = models.ManyToManyField(Tag)
 
     author = models.ForeignKey(User)
+    #阅读量  0或正整数
+    views = models.PositiveIntegerField(default=0)
 
     def __str__(self):
         return self.title
     
     def get_absolute_url(self):
         return reverse('my_blog:detail',args=[self.id])
+
+    def increase_views(self):
+        self.views +=1
+        self.save(update_fields=['views'])
 
     class Meta:
         ordering = ['-created_time']
